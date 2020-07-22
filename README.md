@@ -1,11 +1,14 @@
 # My connected home setup
-Documentation for smarthome devices and setup so I don't later forget what I did
+Documentation for IoT/smarthome devices and setup so I don't later forget what I did
 
 Right now this is just stream of consciousness, I'll beautify it later
 
 
 
 ## Networking
+
+Existing setup
+
 
 | Device                           | Function               | Notes |
 | -------------------------------- | ---------------------- | ----- |
@@ -15,7 +18,25 @@ Right now this is just stream of consciousness, I'll beautify it later
 | Synology DS1019+                 | Server, NAS            |       |
 | Cyberpower CP1500PFCLCD Sinewave | UPS                    |       |
 
-## Smarthome devices
+New Setup:
+
+| Device                            | Function                              | Notes |
+| --------------------------------- | ------------------------------------- | ----- |
+| Netgear CM1000                    | Cable Modem /                         |       |
+| Ubiquiti Dream Machine Pro        | Gateway, Router, Firewall, Controller |       |
+| Ubiquiti UniFi Switch Lite 16 PoE | PoE-out switch (network cabinet)      |       |
+| Ubiquiti UniFi Switch Flex Mini   | PoE switch (media center)             |       |
+| Ubiquiti UniFi NanoHD AP (2)      | WiFi Access Points                    |       |
+| TUFFIOM 12U Network Enclosure     | Equipment Rack                        |       |
+| Raspberry Pi B+                   | Pihole DNS/DHCP server                |       |
+| Synology DS1019+                  | Server, NAS                           |       |
+| Cyberpower CP1500PFCLCD Sinewave  | UPS                                   |       |
+
+
+
+
+
+## IoT devices
 
 | Nickname                | Device                  | Location    | Category               | Brand       | Protocol          | Hub?        | Setup? |
 | ----------------------- | ----------------------- | ----------- | ---------------------- | ----------- | ----------------- | ----------- | ------ |
@@ -28,11 +49,13 @@ Right now this is just stream of consciousness, I'll beautify it later
 |                         | Nest Hub                | Office      | Smart Speaker          | Google      | Direct Wifi       |             |        |
 |                         | Nest Mini               | Lower Bath  | Smart Speaker          | Google      | Direct Wifi       |             |        |
 |                         | Google Home Mini        | Roof Deck   | Smart Speaker          | Google      | Direct Wifi       |             |        |
+|                         | Steam Link              | Living Room | Gaming                 | Valve       | Wired             |             |        |
 |                         | RoboRock S4             | Main        | Vacuum                 | RoboRock    | Direct Wifi       |             |        |
 |                         | Neato XV21              | Lower       | Vacuum                 | Neato       | None              |             |        |
 | Australis               | Nanoleaf Aurora         |             | Lighting               | Nanoleaf    | Direct Wifi       |             |        |
 | Borealis                | Nanoleaf Aurora         |             | Lighting               | Nanoleaf    | Direct Wifi       |             |        |
 |                         | Nanoleaf Canvas         |             | Lighting               | Nanoleaf    | Direct Wifi       |             |        |
+|                         | Hue Bridge              | Living Room | Lighting               | Philips Hue | Wired/Zigbee      |             |        |
 | Death Star              | Hue A19 Color           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
 |                         | Hue A19 Color           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
 |                         | Hue A19 Color           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
@@ -40,6 +63,7 @@ Right now this is just stream of consciousness, I'll beautify it later
 |                         | Hue A19 White           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
 |                         | Hue A19 White           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
 |                         | Hue A19 White           |             | Lighting               | Philips Hue | Zigbee Light Link | Hue Bridge  |        |
+|                         | Insteon Hub             | Living Room | Lighting               | Insteon     | Wired/Insteon     |             |        |
 | Balcony Outside Light   | Wall Switch             |             | Lighting               | Insteon     | Insteon           | Insteon Hub |        |
 | Bedroom Light           | Wall Switch             |             | Lighting               | Insteon     | Insteon           | Insteon Hub |        |
 | Beverage Cooler         | Wall Switch             |             | Lighting               | Insteon     | Insteon           | Insteon Hub |        |
@@ -67,3 +91,5 @@ where to put hubs here?
 How to annotate what's connected to what? network diagram?
 
 Add pictures with which switch is which?
+
+Add VLAN annotations
