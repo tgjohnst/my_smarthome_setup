@@ -1,7 +1,7 @@
 # My connected home setup
-Documentation for IoT/smarthome devices and setup so I don't later forget what I did
+Documentation for IoT/smarthome devices and network setup so I don't later forget what I did
 
-Right now this is just stream of consciousness, I'll beautify it later
+Right now this is just stream of consciousness, I'll beautify it later. Network diagrams coming soon.
 
 
 
