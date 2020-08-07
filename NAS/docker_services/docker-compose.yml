@@ -1,4 +1,4 @@
-version: "3.4"
+version: "0.1"
 services:
 # Unified frontend
   organizr:
@@ -115,10 +115,11 @@ services:
     ports:
       - 6767:6767
 
- # Music Downloads
+# Music Downloads
   lidarr:
-    image: linuxserver/lidarr
     container_name: lidarr
+    image: linuxserver/lidarr
+    restart: unless-stopped
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -130,5 +131,19 @@ services:
       - ${MEDIA}/downloads:/downloads
     ports:
       - 8686:8686
-    restart: unless-stopped
     
+    
+# Service availability/status
+#   monitorr:
+#     container_name: monitorr
+#     image: monitorr/monitorr
+#     restart: unless-stopped
+#     environment:
+#      - PUID=${PUID}
+#      - PGID=${PGID}
+#      - TZ=${TZ}
+#     volumes:
+#      - ${CONFIG}/monitorr:/app
+#     ports:
+#      - 8585:80 
+      
