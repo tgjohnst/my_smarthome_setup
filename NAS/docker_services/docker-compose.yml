@@ -17,7 +17,7 @@ services:
     
 # media server
   emby:
-    image: emby/embyserver:latest
+    image: linuxserver/emby
     container_name: embyserver
     restart: unless-stopped
     network_mode: host
