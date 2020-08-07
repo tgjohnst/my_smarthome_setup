@@ -23,7 +23,7 @@ services:
     network_mode: host
     volumes:
      - ${CONFIG}/embyserver:/config
-     - ${MEDIA}:/mnt/media
+     - ${MEDIA}:/mnt/share1
     devices:
      - "/dev/dri:/dev/dri"
     environment:
