@@ -1,4 +1,4 @@
-version: "0.1"
+version: "3.4"
 services:
 # Unified frontend
   organizr:
@@ -12,7 +12,7 @@ services:
     volumes:
       - ${CONFIG}/organizr:/config
     ports:
-      - 80:80
+      - "80:80"
     
 
 # better container manager
@@ -23,8 +23,8 @@ services:
     restart: unless-stopped
     command: -H unix:///var/run/docker.sock
     ports:
-      - 9000:9000
-      - 8000:8000
+      - "9000:9000"
+      - "8000:8000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${CONFIG}/portainer:/data
@@ -62,7 +62,7 @@ services:
       - ${MEDIA}/downloads/torrent_drop:/downloads # place where to put .torrent files for manual download
       - ${CONFIG}/jackett:/config # config files
     ports:
-      - 9117:9117
+      - "9117:9117"
 
 # TV Downloads
   sonarr:
@@ -79,7 +79,7 @@ services:
       - ${MEDIA}/tv:/tv # tv shows folder
       - ${MEDIA}/downloads:/downloads # download folder
     ports:
-      - 8989:8989
+      - "8989:8989"
 
 # Movies downloads
   radarr:
@@ -96,7 +96,7 @@ services:
       - ${MEDIA}/movies:/movies # movies folder
       - ${MEDIA}/downloads:/downloads # download folder
     ports:
-      - 7878:7878
+      - "7878:7878"
 
 # Subtitles downloads
   bazarr:
@@ -114,7 +114,7 @@ services:
       - ${MEDIA}/movies:/movies # movies folder
       - ${MEDIA}/tv:/tv # tv shows folder
     ports:
-      - 6767:6767
+      - "6767:6767"
 
 # Music Downloads
   lidarr:
@@ -131,7 +131,7 @@ services:
       - ${MEDIA}/music:/music
       - ${MEDIA}/downloads:/downloads
     ports:
-      - 8686:8686
+      - "8686:8686"
     
     
 # Service availability/status
@@ -146,5 +146,5 @@ services:
 #     volumes:
 #      - ${CONFIG}/monitorr:/app
 #     ports:
-#      - 8585:80 
+#      - "8585:80" 
       
