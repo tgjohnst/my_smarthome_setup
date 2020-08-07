@@ -13,6 +13,10 @@
 - Enable User Home Folders (User -> Advanced -> Enable User Home Folders)
 - Create shared folder called media (/media)
 
+## Install useful packages
+
+In **Package Sources** , add SynoCommunity (*https://packages.synocommunity.com/*)
+
 ## Preparation for docker services
 
 ### Install Docker
@@ -21,14 +25,14 @@ Install Docker via synology package manager
 
 ### Configure Docker
 
-Add me to docker group so I don't have to run docker as root
+- Add me to docker group so I don't have to run docker as root
 
 ```
 sudo synogroup --add docker blacklotus90
 sudo chown root:docker /var/run/docker.sock
 ```
 
-Update Docker-compose to latest version
+- Update Docker-compose to latest version
 
 ```
 sudo su
@@ -41,26 +45,9 @@ exit
 docker-compose --version
 ```
 
-Add docker aliases to .bashrc
+- Add docker aliases to .bashrc - see the [.bashrc file](example_bashrc.sh) here. 
 
-```
-# DOCKER
-alias dstopcont='sudo docker stop $(docker ps -a -q)'
-alias dstopall='sudo docker stop $(sudo docker ps -aq)'
-alias drmcont='sudo docker rm $(docker ps -a -q)'
-alias dvolprune='sudo docker volume prune'
-alias dsysprune='sudo docker system prune -a'
-alias ddelimages='sudo docker rmi $(docker images -q)'
-alias docerase='dstopcont ; drmcont ; ddelimages ; dvolprune ; dsysprune'
-alias docprune='ddelimages ; dvolprune ; dsysprune'
-alias dexec='sudo docker exec -ti'
-alias docps='sudo docker ps -a'
-alias dcrm='dcrun rm'
-alias docdf='sudo docker system df'
-alias dclogs='sudo docker logs -tf --tail="50" '
-```
-
-Free up ports 80 and 443 since they are just redirects and not actually serving anything
+- Free up ports 80 and 443 since they are just redirects and not actually serving anything
 
 ```
 sudo su
@@ -83,8 +70,7 @@ exit
 Create config directories for all services
 
 ```
-mkdir -p /volume1/services/config
-cd /volume1/services/config
+cd /volume1/docker
 mkdir organizr
 mkdir portainer
 mkdir deluge
@@ -93,6 +79,7 @@ mkdir sonarr
 mkdir radarr
 mkdir bazarr
 mkdir lidarr
+mkdir embyserver
 cd ~
 ```
 
@@ -104,10 +91,12 @@ mkdir tv
 mkdir music
 mkdir movies
 mkdir downloads
-mkdir downloads/deluge
 mkdir downloads/torrent_drop
-
 ```
+
+### Create a Docker User
+
+Create a docker user e.g. DockerUser in synology GUI. Make sure they're a member of docker group. Grab the docker user and group id from /etc/passwd and /etc/group for the next step
 
 ### Preparing Docker compose file
 
@@ -115,3 +104,31 @@ A full docker compose file is [here](docker_services/docker_compose.yaml)
 
 At a future point I'll break down the file, but for now it's there.
 
+Clone this repo (my_smarthome_setup) into volume1/docker/ and navigate to NAS/docker_services/
+
+Edit .env to use dockeruser and dockergroup from the previous step
+
+### Starting the services
+
+`docker compose up -d` runs docker compose up in "detached mode". This is aliased above as dcu
+
+## Configuring Services
+
+I'm not going to walk through configuration of every service in detail as this will be dependent on your setup and should be self explanatory. here are the out-of-ordinary or gotcha things to set up
+
+Portainer
+
+- set endpoint (e.g. home.lan) so that port urls resolve properly
+
+Deluge
+
+- For organizr integration, install webapi python 3.6 plugin egg from [here](https://github.com/idlesign/deluge-webapi/tree/master/dist) by placing in config (webui doesn't work) and restarting
+- Make sure to set download location (/downloads)
+
+
+
+
+
+# TODOS TODOS
+
+services to checkout: monitorr, logarr
