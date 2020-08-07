@@ -47,14 +47,14 @@ alias fixsecrets='sudo chown -R root:root /home/USER/docker/secrets ; sudo chmod
 #                                                                          #
 ############################################################################
 
-function dnames-fn {
+function dnames_fn {
 	for ID in `docker ps | awk '{print $1}' | grep -v 'CONTAINER'`
 	do
     	docker inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
 	done
 }
 
-function dip-fn {
+function dip_fn {
     echo "IP addresses of all named running containers"
 
     for DOC in `dnames-fn`
@@ -65,35 +65,35 @@ function dip-fn {
     echo $OUT|column -t
 }
 
-function dex-fn {
+function dex_fn {
 	docker exec -it $1 ${2:-bash}
 }
 
-function di-fn {
+function di_fn {
 	docker inspect $1
 }
 
-function dl-fn {
+function dl_fn {
 	docker logs -f $1
 }
 
-function drun-fn {
+function drun_fn {
 	docker run -it $1 $2
 }
 
-function dcr-fn {
+function dcr_fn {
 	docker-compose run $@
 }
 
-function dsr-fn {
+function dsr_fn {
 	docker stop $1;docker rm $1
 }
 
-function drmc-fn {
+function drmc_fn {
        docker rm $(docker ps --all -q -f status=exited)
 }
 
-function drmid-fn {
+function drmid_fn {
        imgs=$(docker images -q -f dangling=true)
        [ ! -z "$imgs" ] && docker rmi "$imgs" || echo "no dangling images."
 }
@@ -103,11 +103,11 @@ function dlab {
        docker ps --filter="label=$1" --format="{{.ID}}"
 }
 
-function dc-fn {
+function dc_fn {
         docker-compose $*
 }
 
-function d-aws-cli-fn {
+function d_aws_cli_fn {
     docker run \
            -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
            -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
@@ -115,21 +115,21 @@ function d-aws-cli-fn {
            amazon/aws-cli:latest $1 $2 $3
 }
 
-alias daws=d-aws-cli-fn
-alias dc=dc-fn
+alias daws=d-_aws_cli_fn
+alias dc=dc_fn
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
-alias dcr=dcr-fn
-alias dex=dex-fn
-alias di=di-fn
+alias dcr=dcr_fn
+alias dex=dex_fn
+alias di=di_fn
 alias dim="docker images"
-alias dip=dip-fn
-alias dl=dl-fn
-alias dnames=dnames-fn
+alias dip=dip_fn
+alias dl=dl_fn
+alias dnames=dnames_fn
 alias dps="docker ps"
 alias dpsa="docker ps -a"
-alias drmc=drmc-fn
-alias drmid=drmid-fn
-alias drun=drun-fn
+alias drmc=drmc_fn
+alias drmid=drmid_fn
+alias drun=drun_fn
 alias dsp="docker system prune --all"
-alias dsr=dsr-fn
+alias dsr=dsr_fn
