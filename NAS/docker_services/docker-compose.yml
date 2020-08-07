@@ -2,7 +2,7 @@ version: "3.4"
 services:
 # Unified frontend
   organizr:
-    image: linuxserver/organizr
+    image: organizrtools/organizr-v2
     container_name: organizr
     restart: unless-stopped
     environment:
