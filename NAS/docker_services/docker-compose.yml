@@ -2,7 +2,8 @@ version: "3.4"
 services:
 # Unified frontend
   organizr:
-    image: organizrtools/organizr-v2:latest
+    #image: organizrtools/organizr-v2:latest # deprecated
+    organizr/organizr
     container_name: organizr
     restart: unless-stopped
     environment:
