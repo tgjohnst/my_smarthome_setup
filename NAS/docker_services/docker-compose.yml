@@ -4,6 +4,7 @@ services:
   organizr:
     image: linuxserver/organizr
     container_name: organizr
+    restart: unless-stopped
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,14 +13,14 @@ services:
       - ${CONFIG}/organizr:/config
     ports:
       - 80:80
-    restart: unless-stopped
+    
 
 # better container manager
   portainer:
     image: portainer/portainer
     hostname: portainer
     container_name: portainer
-    restart: always
+    restart: unless-stopped
     command: -H unix:///var/run/docker.sock
     ports:
       - 9000:9000
@@ -43,7 +44,7 @@ services:
       - PGID=${PGID} # default group id, defined in .env
       - TZ=${TZ} # timezone, defined in .env
     volumes:
-      - ${MEDIA}/downloads/deluge:/downloads # downloads folder
+      - ${MEDIA}/downloads:/downloads # downloads folder
       - ${CONFIG}/deluge:/config # config files
 
 # API to torrent indices
