@@ -5,7 +5,7 @@ This is a work in progress as I build out my network
 
 ## Networking
 
-I have a Ubiquiti network setup with 50+ IoT devices.
+I have a Ubiquiti network setup with [50+ smarthome/IoT devices](Networking/smarthome_inventory.md).  
 [Here's how I set up my network](Networking/network_setup_notes.md)
 
 TODO - this will be filled out with much more detail soon
