@@ -1,4 +1,5 @@
 # **NAS setup notes**
+These are notes on how I set up my NAS. Detail will be fleshed out eventually, for now they are at least all the essential notes to self I'd need to recreate the setup starting from scratch.
 
 ## Initial Setup
 
@@ -10,6 +11,7 @@
 - Create btrfs volume for that storage pool
 - Wait for parity check to complete (24+ hrs)
 - Enable SSH in settings -> Terminal & SNMP
+- Enable UPS support (automatic shutdown) in Settings -> UPS -> Enable UPS Support
 - Enable User Home Folders (User -> Advanced -> Enable User Home Folders)
 - Create shared folder called media (/media)
 
@@ -100,7 +102,7 @@ Create a docker user e.g. DockerUser in synology GUI. Make sure they're a member
 
 ### Preparing Docker compose file
 
-A full docker compose file is [here](docker_services/docker_compose.yaml)
+A full docker compose file is [here](docker_services/docker_compose.yml)
 
 At a future point I'll break down the file, but for now it's there.
 
@@ -118,17 +120,13 @@ I'm not going to walk through configuration of every service in detail as this w
 
 Portainer
 
-- set endpoint (e.g. home.lan) so that port urls resolve properly
+- set endpoint (e.g. home.lan) so that port urls resolve properly, before doing anything else
 
 Deluge
 
-- For organizr integration, install webapi python 3.6 plugin egg from [here](https://github.com/idlesign/deluge-webapi/tree/master/dist) by placing in config (webui doesn't work) and restarting
+- For organizr integration, install webapi python 3.6 plugin egg from [here](https://github.com/idlesign/deluge-webapi/tree/master/dist) by placing in config directory (web ui settings page doesn't work) and restarting
 - Make sure to set download location (/downloads)
 
 
-
-
-
-# TODOS TODOS
-
-services to checkout: monitorr, logarr
+# TODOS
+docker services to check out: monitorr, logarr
