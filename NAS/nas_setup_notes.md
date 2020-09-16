@@ -3,7 +3,7 @@ These are notes on how I set up my NAS. Detail will be fleshed out eventually, f
 
 ## Initial Setup
 
-- Install 4 8TB drives after shucking WD Reds
+- Install 4 8TB drives after [shucking](https://theinventory.com/drive-shucking-a-cheaper-way-to-fill-your-nas-1828843337) some WD Reds
 - Install 1 256GB SSD (old) for read cache
 - Plug NAS into UPS and start up NAS
 - Run SMART extended tests on all 4 drives
@@ -79,7 +79,6 @@ mkdir deluge
 mkdir jackett
 mkdir sonarr
 mkdir radarr
-mkdir bazarr
 mkdir lidarr
 mkdir embyserver
 cd ~
@@ -127,6 +126,4 @@ Deluge
 - For organizr integration, install webapi python 3.6 plugin egg from [here](https://github.com/idlesign/deluge-webapi/tree/master/dist) by placing in config directory (web ui settings page doesn't work) and restarting
 - Make sure to set download location (/downloads)
 
-
-# TODOS
-docker services to check out: monitorr, logarr
+**TODO** finish this
