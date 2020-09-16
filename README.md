@@ -43,15 +43,15 @@ The backbone of the physical network is split between 3 main locations:
 
 #### Central Networking Rack
 
-![network_rack_200915](C:/Users/black/gits/my_smarthome_setup/Networking/images/network_rack_200915.jpg)
+![network_rack_200915](Networking/images/network_rack_200915.jpg)
 
 #### Networking Cabinet
 
-![network_cabinet_200915](C:/Users/black/gits/my_smarthome_setup/Networking/images/network_cabinet_200915.jpg)
+![network_cabinet_200915](Networking/images/network_cabinet_200915.jpg)
 
 #### Media Center
 
-![media_cabinet_200915](C:/Users/black/gits/my_smarthome_setup/Networking/images/media_cabinet_200915.jpg)
+![media_cabinet_200915](Networking/images/media_cabinet_200915.jpg)
 
 ### Network Setup
 
