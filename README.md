@@ -7,20 +7,24 @@ This is a work in progress as I build out my network
 
 I have a Synology DS1019+ NAS with 32TB of redundant storage (4 8TB WD Reds). It's set up in SHR-1 RAID, which means that it can recover even if 1 drive fails, and can be expanded flexibly. 
 
-[Here's how I set up my NAS](NAS/nas_setup_notes.md)
-
 This NAS also serves as a home server, running a bunch of web services I can access while on my network.
 When combined, these allow me to
-- Have a unified homepage that contains every web service I'm running on my home network
-- Monitor and manage these services themselves
-- Stream media to any of my devices via a netflix-like interface and app
-- Automatically organize, catalog, manage, and fetch media (movies, TV, music, books)
 
-[Here are the services I run on my NAS](NAS/docker_services.md)
+- Have a **unified homepage** that contains every web service I'm running on my home network
+- **Monitor and manage** these services themselves
+- **Stream media** to any of my devices via a netflix-like interface and app
+- **Automatically organize, catalog, manage, and fetch** media (movies, TV, music, books)
+
+**[Here are the services I run on my NAS](NAS/docker_services.md)**
+
+**[Here's how I set up my NAS](NAS/nas_setup_notes.md)**
 
 ## Networking
 
-I have a Ubiquiti network setup with [50+ smarthome/IoT devices](Networking/smarthome_inventory.md).  
+I have a Ubiquiti network setup with **[50+ smarthome/IoT devices](Networking/smarthome_inventory.md).** 
+
+A rough map of the network is below:
+
 ![](Networking/images/network_map_200915.jpg)
 
 ### Networking Devices
@@ -57,4 +61,4 @@ The backbone of the physical network is split between 3 main locations:
 
 The network is divided into 3 VLANs, served over wired or via 2 Wifi SSIDs. Firewall rules control access to/from/between VLANs. There is much more detail at the link below:
 
-[Here are some notes and settings about how I set up my network](Networking/network_setup_notes.md)
+**[Here are some notes and settings about how I set up my network](Networking/network_setup_notes.md)** (TODO)
