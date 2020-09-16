@@ -45,3 +45,7 @@ For now, these are all integrated into and managed by Google Home / Google Assis
 | TV Lounge Light         | Wall Switch             |             | Lighting               | Insteon     | Insteon           | Insteon Hub |        |
 | TV Outside Light        | Wall Switch             |             | Lighting               | Insteon     | Insteon           | Insteon Hub |        |
 | Water Leak Sensor       |                         |             | Sensor                 |             |                   | Insteon Hub |        |
+
+**TODOS**
+
+Add VLAN annotations
