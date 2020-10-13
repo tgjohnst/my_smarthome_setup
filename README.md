@@ -1,7 +1,5 @@
 # My connected home setup
-Documentation for IoT/smarthome devices and network setup so I don't later forget what I did
-
-This is a work in progress as I build out my network
+Documentation for IoT/smarthome devices and network setup for others trying to accomplish something similar, and so I don't forget what I did.
 
 ## Home Media Server
 
