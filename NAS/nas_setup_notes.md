@@ -50,6 +50,7 @@ docker-compose --version
 - Add docker aliases to .bashrc - see the [.bashrc file](example_bashrc.sh) here. 
 
 - Free up ports 80 and 443 since they are just redirects and not actually serving anything
+  -  This will sometimes have to be redone when DSM is updated
 
 ```
 sudo su
@@ -63,8 +64,8 @@ sed -i "s/80/8880/g" WWWService.mustache
 sed -i "s/443/8881/g" server.mustache
 sed -i "s/443/8881/g" DSM.mustache
 sed -i "s/443/8881/g" WWWService.mustache
+synoservicecfg --restart nginx # restart the webserver
 exit
-# then, change any setting in the Syno UI to restart the webserver
 ```
 
 ### Preparing filesystem
