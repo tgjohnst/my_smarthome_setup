@@ -51,7 +51,7 @@ The backbone of the physical network is split between 3 main locations:
 
 ![network_cabinet_200915](Networking/images/network_cabinet_200915.jpg)
 
-#### Media Center
+#### Media Center (deprecated after upgrading to Nvidia Shield)
 
 ![media_cabinet_200915](Networking/images/media_cabinet_200915.jpg)
 
