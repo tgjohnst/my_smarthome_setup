@@ -17,7 +17,7 @@ services:
     
 # media server
   emby:
-    image: ghcr.io/linuxserver/emby
+    image: ghcr.io/linuxserver/emby@sha256:62dc49c7c8c54efadd675aa0d85938828d56a76da06f051ee9e49172fd60dc43
     container_name: embyserver
     restart: unless-stopped
     network_mode: host
